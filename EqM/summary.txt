@@ -1,0 +1,38 @@
+PyTorch profiler summary (sorted by self_cuda_time_total):
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg       CPU Mem  Self CPU Mem      CUDA Mem  Self CUDA Mem    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                 EBM/NN         0.00%       0.000us         0.00%       0.000us       0.000us       66.124s       100.01%       66.124s     132.513ms           0 B           0 B           0 B           0 B           499  
+                                            aten::addmm         1.42%     947.216ms         1.81%        1.202s      16.767us       41.306s        62.48%       41.311s     576.051us           0 B           0 B    4424.29 GB    4424.29 GB         71714  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_...         0.00%       0.000us         0.00%       0.000us       0.000us       19.025s        28.78%       19.025s     682.210us           0 B           0 B           0 B           0 B         27888  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_...         0.00%       0.000us         0.00%       0.000us       0.000us       12.231s        18.50%       12.231s     877.181us           0 B           0 B           0 B           0 B         13944  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_...         0.00%       0.000us         0.00%       0.000us       0.000us        9.015s        13.63%        9.015s     646.486us           0 B           0 B           0 B           0 B         13944  
+                     aten::_efficient_attention_forward         0.13%      89.751ms         0.37%     246.419ms      17.669us        6.879s        10.40%        6.882s     493.449us     217.91 KB      16.38 KB     490.28 GB           0 B         13946  
+fmha_cutlassF_f32_aligned_64x128_rf_sm80(PyTorchMemE...         0.00%       0.000us         0.00%       0.000us       0.000us        6.877s        10.40%        6.877s     493.155us           0 B           0 B           0 B           0 B         13944  
+                                             aten::gelu         0.10%      68.517ms         0.16%     108.337ms       7.769us        5.941s         8.99%        5.943s     426.196us           0 B           0 B    1960.88 GB    1960.88 GB         13944  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us        5.941s         8.99%        5.941s     426.073us           0 B           0 B           0 B           0 B         13944  
+                                              aten::add         0.55%     365.987ms         0.88%     588.833ms       6.793us        5.130s         7.76%        5.130s      59.179us           0 B           0 B    2005.84 GB    2005.80 GB         86684  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us        5.044s         7.63%        5.044s      86.426us           0 B           0 B           0 B           0 B         58360  
+                                            aten::copy_         0.19%     124.325ms        89.03%       59.297s       1.950ms        3.429s         5.19%        3.436s     112.981us           0 B     -24.00 MB           0 B     -24.00 MB         30416  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us        3.421s         5.17%        3.421s     118.329us           0 B           0 B           0 B           0 B         28914  
+                                              aten::mul         0.43%     283.266ms         0.68%     451.753ms       7.753us        2.073s         3.14%        2.073s      35.574us     249.03 KB     247.08 KB    1978.75 GB    1978.71 GB         58268  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us        2.072s         3.13%        2.072s      36.488us           0 B           0 B           0 B           0 B         56772  
+void cutlass::Kernel2<cutlass_80_tensorop_s1688gemm_...         0.00%       0.000us         0.00%       0.000us       0.000us        1.017s         1.54%        1.017s      65.859us           0 B           0 B           0 B           0 B         15438  
+void at::native::(anonymous namespace)::vectorized_l...         0.00%       0.000us         0.00%       0.000us       0.000us     847.139ms         1.28%     847.139ms      29.844us           0 B           0 B           0 B           0 B         28386  
+                                aten::native_layer_norm         0.35%     233.116ms         1.33%     885.894ms      31.209us     847.047ms         1.28%        4.250s     149.739us           0 B           0 B     999.68 GB    -998.02 GB         28386  
+                                aten::cudnn_convolution         0.09%      61.293ms         0.47%     315.321ms     553.195us     261.659ms         0.40%     305.773ms     536.443us           0 B           0 B      33.47 GB      33.43 GB           570  
+sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us     126.145ms         0.19%     126.145ms       2.253ms           0 B           0 B           0 B           0 B            56  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     124.315ms         0.19%     124.315ms       4.379us           0 B           0 B           0 B           0 B         28386  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us      86.923ms         0.13%      86.923ms       5.796us           0 B           0 B           0 B           0 B         14998  
+                                             aten::silu         0.09%      60.135ms         0.15%     102.137ms       6.810us      86.919ms         0.13%      86.927ms       5.796us           0 B           0 B      15.68 GB      15.68 GB         14998  
+                                aten::native_group_norm         0.00%     837.202us         0.02%      11.438ms     190.634us      62.623ms         0.09%      62.851ms       1.048ms           0 B           0 B      13.69 GB      -2.81 MB            60  
+                                             aten::add_         0.01%       4.625ms         0.02%      11.532ms      10.737us      62.522ms         0.09%      62.594ms      58.281us           0 B           0 B           0 B           0 B          1074  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+
+Self CPU time total: 66.606s
+Self CUDA time total: 66.115s
+
+Stage breakdown (including short events): have divided by 1000
+  EBM/Noise: CPU 0.347 ms | CUDA 0.000 ms
+  EBM/Gradient Calculation: CPU 10.162 ms | CUDA 0.000 ms
+  EBM/Sample Update: CPU 15.849 ms | CUDA 0.000 ms

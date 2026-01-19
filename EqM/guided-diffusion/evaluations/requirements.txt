@@ -1,0 +1,6 @@
+# `tensorflow` already bundles GPU support on modern Linux builds while the
+# deprecated `tensorflow-gpu` shim fails to install with recent packaging.
+tensorflow==2.12.0
+scipy
+requests
+tqdm
