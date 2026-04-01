@@ -1,0 +1,107 @@
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+autograd::engine::evaluate_function: ConvolutionBack...         0.66%     143.808us         5.70%       1.235ms      77.204us       0.000us         0.00%       7.829ms     489.283us            16  
+                                   ConvolutionBackward0         0.16%      34.730us         5.04%       1.091ms      68.216us       0.000us         0.00%       7.829ms     489.283us            16  
+                             aten::convolution_backward         2.11%     456.809us         4.88%       1.057ms      66.045us       6.566ms        29.57%       7.829ms     489.283us            16  
+                                           aten::conv2d         0.08%      16.330us         2.93%     635.636us      39.727us       0.000us         0.00%       6.575ms     410.958us            16  
+                                      aten::convolution         0.29%      63.115us         2.86%     619.306us      38.707us       0.000us         0.00%       6.575ms     410.958us            16  
+                                     aten::_convolution         0.22%      47.330us         2.57%     556.191us      34.762us       0.000us         0.00%       6.575ms     410.958us            16  
+                                aten::cudnn_convolution         1.41%     306.525us         2.35%     508.861us      31.804us       6.575ms        29.61%       6.575ms     410.958us            16  
+                                            aten::copy_         2.36%     511.510us        76.76%      16.630ms     106.600us       4.074ms        18.35%       4.079ms      26.145us           156  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us       3.544ms        15.96%       3.544ms      54.516us            65  
+                                            aten::clone         1.16%     250.536us         9.31%       2.017ms      14.510us       0.000us         0.00%       2.646ms      19.035us           139  
+                                       aten::contiguous         0.12%      26.080us         3.38%     731.934us      15.249us       0.000us         0.00%       2.279ms      47.479us            48  
+_5x_cudnn_ampere_scudnn_winograd_128x128_ldg1_ldg4_r...         0.00%       0.000us         0.00%       0.000us       0.000us       1.876ms         8.45%       1.876ms     469.111us             4  
+sm80_xmma_dgrad_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us       1.646ms         7.41%       1.646ms     411.615us             4  
+                                               aten::to         0.11%      22.999us        71.01%      15.382ms     809.581us       0.000us         0.00%       1.433ms      75.410us            19  
+                                         aten::_to_copy         0.18%      39.919us        70.90%      15.359ms     903.472us       0.000us         0.00%       1.433ms      84.282us            17  
+                                              aten::add         1.14%     246.843us         1.78%     384.911us      12.830us       1.380ms         6.21%       1.380ms      45.999us            30  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_s168...         0.00%       0.000us         0.00%       0.000us       0.000us       1.344ms         6.05%       1.344ms     336.048us             4  
+sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us       1.332ms         6.00%       1.332ms     444.117us             3  
+void cudnn::engines_precompiled::nchwToNhwcKernel<fl...         0.00%       0.000us         0.00%       0.000us       0.000us       1.290ms         5.81%       1.290ms      24.806us            52  
+sm86_xmma_fprop_implicit_gemm_indexed_tf32f32_tf32f3...         0.00%       0.000us         0.00%       0.000us       0.000us       1.282ms         5.78%       1.282ms     641.247us             2  
+sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us       1.202ms         5.42%       1.202ms     400.820us             3  
+autograd::engine::evaluate_function: AvgPool2DBackwa...         0.15%      33.018us         0.63%     137.068us      27.414us       0.000us         0.00%     983.292us     196.658us             5  
+                                     AvgPool2DBackward0         0.04%       9.690us         0.48%     104.050us      20.810us       0.000us         0.00%     983.292us     196.658us             5  
+                              aten::avg_pool2d_backward         0.24%      52.340us         0.44%      94.360us      18.872us     983.292us         4.43%     983.292us     196.658us             5  
+void at::native::(anonymous namespace)::avg_pool2d_b...         0.00%       0.000us         0.00%       0.000us       0.000us     983.292us         4.43%     983.292us     196.658us             5  
+autograd::engine::evaluate_function: LeakyReluBackwa...         0.40%      87.677us         1.55%     335.365us      25.797us       0.000us         0.00%     839.873us      64.606us            13  
+                                     LeakyReluBackward0         0.13%      27.440us         1.14%     247.688us      19.053us       0.000us         0.00%     839.873us      64.606us            13  
+                              aten::leaky_relu_backward         0.61%     132.009us         1.02%     220.248us      16.942us     839.873us         3.78%     839.873us      64.606us            13  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     832.511us         3.75%     832.511us      36.196us            23  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_s168...         0.00%       0.000us         0.00%       0.000us       0.000us     668.320us         3.01%     668.320us     668.320us             1  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_s168...         0.00%       0.000us         0.00%       0.000us       0.000us     663.488us         2.99%     663.488us     663.488us             1  
+                                              aten::mul         0.56%     122.276us         0.93%     200.424us      15.417us     634.814us         2.86%     634.814us      48.832us            13  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     628.990us         2.83%     628.990us      52.416us            12  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_s168...         0.00%       0.000us         0.00%       0.000us       0.000us     614.847us         2.77%     614.847us     307.424us             2  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us     590.112us         2.66%     590.112us      65.568us             9  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     561.950us         2.53%     561.950us      62.439us             9  
+                                       aten::leaky_relu         0.43%      93.690us         0.68%     147.628us      11.356us     540.192us         2.43%     540.192us      41.553us            13  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     540.192us         2.43%     540.192us      41.553us            13  
+                         Memcpy DtoD (Device -> Device)         0.00%       0.000us         0.00%       0.000us       0.000us     360.474us         1.62%     360.474us       4.005us            90  
+      autograd::engine::evaluate_function: AddBackward0         0.41%      88.716us         0.95%     206.733us      10.881us       0.000us         0.00%     357.568us      18.819us            19  
+sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us     352.031us         1.59%     352.031us     176.015us             2  
+                                       aten::avg_pool2d         0.16%      35.349us         0.26%      56.399us      11.280us     334.495us         1.51%     334.495us      66.899us             5  
+void at::native::(anonymous namespace)::avg_pool2d_o...         0.00%       0.000us         0.00%       0.000us       0.000us     334.495us         1.51%     334.495us      66.899us             5  
+      autograd::engine::evaluate_function: MulBackward0         0.20%      43.960us         0.76%     164.657us      27.443us       0.000us         0.00%     318.718us      53.120us             6  
+                                           MulBackward0         0.06%      13.220us         0.56%     120.697us      20.116us       0.000us         0.00%     318.718us      53.120us             6  
+void cudnn::engines_precompiled::nhwcToNchwKernel<fl...         0.00%       0.000us         0.00%       0.000us       0.000us     272.606us         1.23%     272.606us      19.472us            14  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us     249.761us         1.12%     249.761us      62.440us             4  
+                                               aten::mm         1.44%     312.331us         2.17%     470.518us      23.526us     245.952us         1.11%     247.584us      12.379us            20  
+                                           aten::matmul         0.10%      22.499us         2.02%     438.328us      23.070us       0.000us         0.00%     244.417us      12.864us            19  
+void cutlass__5x_cudnn::Kernel<cutlass_tensorop_s168...         0.00%       0.000us         0.00%       0.000us       0.000us     182.848us         0.82%     182.848us      91.424us             2  
+                       Memcpy DtoH (Device -> Pageable)         0.00%       0.000us         0.00%       0.000us       0.000us     169.888us         0.77%     169.888us     169.888us             1  
+_5x_cudnn_ampere_scudnn_128x64_relu_xregs_large_nn_v...         0.00%       0.000us         0.00%       0.000us       0.000us     140.960us         0.63%     140.960us     140.960us             1  
+void cudnn::detail::dgrad_engine<float, 512, 6, 5, 3...         0.00%       0.000us         0.00%       0.000us       0.000us     139.904us         0.63%     139.904us     139.904us             1  
+void gemmSN_NN_kernel<float, 256, 4, 2, 8, 4, 4, fal...         0.00%       0.000us         0.00%       0.000us       0.000us     126.304us         0.57%     126.304us      18.043us             7  
+sm86_xmma_fprop_implicit_gemm_tf32f32_tf32f32_f32_nh...         0.00%       0.000us         0.00%       0.000us       0.000us     107.584us         0.48%     107.584us      53.792us             2  
+                        ampere_sgemm_32x32_sliced1x4_nn         0.00%       0.000us         0.00%       0.000us       0.000us      90.048us         0.41%      90.048us       8.186us            11  
+void cublasLt::splitKreduce_kernel<32, 16, int, floa...         0.00%       0.000us         0.00%       0.000us       0.000us      24.929us         0.11%      24.929us       2.266us            11  
+void cudnn::winograd::generateWinogradTilesKernel<0,...         0.00%       0.000us         0.00%       0.000us       0.000us      10.623us         0.05%      10.623us       2.656us             4  
+                                              aten::sub         0.05%      10.770us         0.07%      15.590us      15.590us      10.528us         0.05%      10.528us      10.528us             1  
+                                              aten::sum         0.09%      20.370us         0.15%      31.499us      15.749us       8.288us         0.04%       8.288us       4.144us             2  
+                                        Memset (Device)         0.00%       0.000us         0.00%       0.000us       0.000us       6.016us         0.03%       6.016us       0.859us             7  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       5.888us         0.03%       5.888us       2.944us             2  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       5.824us         0.03%       5.824us       5.824us             1  
+void cudnn::engines_precompiled::scalePackedTensor_k...         0.00%       0.000us         0.00%       0.000us       0.000us       5.793us         0.03%       5.793us       5.793us             1  
+void at::native::reduce_kernel<128, 4, at::native::R...         0.00%       0.000us         0.00%       0.000us       0.000us       5.280us         0.02%       5.280us       5.280us             1  
+                                Activity Buffer Request         0.76%     164.536us         0.76%     164.536us     164.536us       4.768us         0.02%       4.768us       4.768us             1  
+                                            aten::clamp         0.05%      10.199us         0.07%      15.379us      15.379us       4.160us         0.02%       4.160us       4.160us             1  
+                                             aten::add_         0.03%       7.560us         0.06%      13.720us      13.720us       3.969us         0.02%       3.969us       3.969us             1  
+       autograd::engine::evaluate_function: MmBackward0         0.04%       9.350us         0.33%      72.029us      72.029us       0.000us         0.00%       3.167us       3.167us             1  
+                                            MmBackward0         0.02%       4.080us         0.29%      62.679us      62.679us       0.000us         0.00%       3.167us       3.167us             1  
+void gemv2T_kernel_val<int, int, float, float, float...         0.00%       0.000us         0.00%       0.000us       0.000us       3.136us         0.01%       3.136us       3.136us             1  
+void at::native::reduce_kernel<512, 1, at::native::R...         0.00%       0.000us         0.00%       0.000us       0.000us       3.008us         0.01%       3.008us       3.008us             1  
+     autograd::engine::evaluate_function: ReluBackward0         0.02%       5.379us         0.13%      27.859us      27.859us       0.000us         0.00%       2.432us       2.432us             1  
+                                          ReluBackward0         0.01%       2.860us         0.10%      22.480us      22.480us       0.000us         0.00%       2.432us       2.432us             1  
+                               aten::threshold_backward         0.05%      11.830us         0.09%      19.620us      19.620us       2.432us         0.01%       2.432us       2.432us             1  
+void at::native::elementwise_kernel<128, 2, at::nati...         0.00%       0.000us         0.00%       0.000us       0.000us       2.432us         0.01%       2.432us       2.432us             1  
+                                             aten::relu         0.02%       4.140us         0.06%      12.739us      12.739us       0.000us         0.00%       1.728us       1.728us             1  
+                                        aten::clamp_min         0.02%       4.579us         0.04%       8.599us       8.599us       1.728us         0.01%       1.728us       1.728us             1  
+void cask__5x_cudnn::computeOffsetsKernel<false, fal...         0.00%       0.000us         0.00%       0.000us       0.000us       1.599us         0.01%       1.599us       1.599us             1  
+void gemmk1_kernel<int, float, 256, 5, false, false,...         0.00%       0.000us         0.00%       0.000us       0.000us       1.535us         0.01%       1.535us       1.535us             1  
+                                        aten::ones_like         0.01%       1.370us         0.07%      14.160us      14.160us       0.000us         0.00%       1.121us       1.121us             1  
+                                            aten::fill_         0.02%       3.660us         0.04%       8.320us       8.320us       1.121us         0.01%       1.121us       1.121us             1  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       1.121us         0.01%       1.121us       1.121us             1  
+                                    aten::empty_strided         1.02%     220.485us         1.02%     220.485us       2.397us       0.000us         0.00%       0.000us       0.000us            92  
+                                        cudaMemcpyAsync        72.02%      15.601ms        72.02%      15.601ms     171.441us       0.000us         0.00%       0.000us       0.000us            91  
+                                           aten::detach         0.01%       3.200us         0.04%       8.520us       2.130us       0.000us         0.00%       0.000us       0.000us             4  
+                                                 detach         0.02%       5.320us         0.02%       5.320us       1.330us       0.000us         0.00%       0.000us       0.000us             4  
+                                          aten::permute         1.09%     236.009us         1.45%     315.098us       3.151us       0.000us         0.00%       0.000us       0.000us           100  
+                                       aten::as_strided         0.39%      84.247us         0.39%      84.247us       0.787us       0.000us         0.00%       0.000us       0.000us           107  
+                                       aten::empty_like         0.19%      40.230us         0.83%     180.475us       3.610us       0.000us         0.00%       0.000us       0.000us            50  
+                                            aten::empty         0.92%     199.635us         0.92%     199.635us       3.071us       0.000us         0.00%       0.000us       0.000us            65  
+                                       cudaLaunchKernel         5.85%       1.266ms         5.85%       1.266ms       4.672us       0.000us         0.00%       0.000us       0.000us           271  
+                                    cudaPeekAtLastError         0.02%       4.810us         0.02%       4.810us       0.078us       0.000us         0.00%       0.000us       0.000us            62  
+                                        cudaMemsetAsync         0.13%      27.250us         0.13%      27.250us       3.406us       0.000us         0.00%       0.000us       0.000us             8  
+                                             aten::view         0.22%      46.860us         0.22%      46.860us       2.603us       0.000us         0.00%       0.000us       0.000us            18  
+                                  cudaFuncGetAttributes         0.10%      21.529us         0.10%      21.529us       2.153us       0.000us         0.00%       0.000us       0.000us            10  
+                                    cudaLaunchKernelExC         0.24%      53.020us         0.24%      53.020us       3.314us       0.000us         0.00%       0.000us       0.000us            16  
+          cudaOccupancyMaxActiveBlocksPerMultiprocessor         0.04%       9.530us         0.04%       9.530us       0.866us       0.000us         0.00%       0.000us       0.000us            11  
+                                   cudaFuncSetAttribute         0.03%       7.230us         0.03%       7.230us       0.723us       0.000us         0.00%       0.000us       0.000us            10  
+      autograd::engine::evaluate_function: SumBackward0         0.04%       7.850us         0.07%      15.709us      15.709us       0.000us         0.00%       0.000us       0.000us             1  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 21.663ms
+Self CUDA time total: 22.206ms
+
